@@ -8,11 +8,10 @@ These dotfiles contain customizations made from the default Omarchy OS configura
 
 ## Contents
 
-- **Waybar**: Custom top bar configuration with modules for workspaces, clock, weather, system info, and notifications.
+- **Waybar**: Custom top bar configuration with modules for workspaces, clock, date, system info, and notifications.
 - **Hyprland**: Window manager configurations including keybindings, monitor settings, idle management, and visual effects.
 - **Starship**: Shell prompt customization for a clean and informative terminal experience.
 
-## Screenshot
 
 ![Main Window](vibe.png)
 
