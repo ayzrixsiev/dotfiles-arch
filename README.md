@@ -6,67 +6,31 @@ Personal configuration files for Omarchy OS (Arch Linux-based Hyprland distribut
 
 These dotfiles contain customizations made from the default Omarchy OS configuration. Omarchy uses a system where defaults are sourced from `~/.local/share/omarchy/default/` and user customizations override them.
 
-### Structure
-```
-dotfiles/
-├── .config/
-│   ├── hypr/
-│   │   ├── hyprland.conf
-│   │   ├── input.conf
-│   │   ├── monitors.conf
-│   │   ├── hypridle.conf
-│   │   └── hyprlock.conf
-│   └── waybar/
-│       ├── config.jsonc
-│       └── style.css
-├── home/
-│   ├── .bashrc
-│   └── starship.toml
-└── README.md
-```
+## Contents
 
-### How to Apply
+- **Waybar**: Custom top bar configuration with modules for workspaces, clock, weather, system info, and notifications.
+- **Hyprland**: Window manager configurations including keybindings, monitor settings, idle management, and visual effects.
+- **Starship**: Shell prompt customization for a clean and informative terminal experience.
 
-1. **Backup existing configs:**
+## Screenshot
+
+![Main Window](vibe.png)
+
+*Representation of the lovely Waybar and wallpaper setup.*
+
+## Installation
+
+To apply these configurations to your system:
+
+1. Clone this repository:
    ```bash
-   cp -r ~/.config/hypr ~/.config/hypr.backup
-   cp -r ~/.config/waybar ~/.config/waybar.backup
-   cp ~/.bashrc ~/.bashrc.backup
-   cp ~/.config/starship.toml ~/.config/starship.toml.backup
+   git clone https://github.com/yourusername/dotfiles-arch.git
+   cd dotfiles-arch
    ```
 
-2. **Copy Hyprland configs:**
+2. Run the install script:
    ```bash
-   cp dotfiles/.config/hypr/* ~/.config/hypr/
+   ./install.sh
    ```
 
-3. **Copy Waybar configs:**
-   ```bash
-   cp dotfiles/.config/waybar/* ~/.config/waybar/
-   ```
-
-4. **Copy shell configs:**
-   ```bash
-   cp dotfiles/home/.bashrc ~/
-   cp dotfiles/home/starship.toml ~/.config/
-   ```
-
-5. **Reload configurations:**
-   ```bash
-   # Reload Hyprland
-   hyprctl reload
-   
-   # Restart Waybar
-   killall waybar && waybar &
-   
-   # Reload shell
-   source ~/.bashrc
-   ```
-
-## Author
-
-Created for personal use on Omarchy OS.
-
-## License
-
-Feel free to use and modify as needed.
+The script will copy the configuration files to their appropriate locations. You may need to restart Hyprland or reload configurations for changes to take effect.

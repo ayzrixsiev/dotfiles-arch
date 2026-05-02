@@ -30,15 +30,16 @@ tooltip label {
 
 #workspaces {
   background-color: @background;
-  padding: 4px 5px;
-  margin: 0 0 0 8px;
+  padding: 4px 6px;
+  margin: 0;
   border-radius: 10px;
+  border: 1px solid alpha(@foreground, 0.22);
   color: @foreground;
 }
 
 #workspaces button {
-  padding: 1px 5px;
-  margin: 0px 2px;
+  padding: 2px 6px;
+  margin: 0px 3px;
   border-radius: 8px;
   color: @foreground;
   transition: all .25s ease-in-out;
@@ -65,17 +66,19 @@ tooltip label {
 #pulseaudio,
 #network,
 #clock,
-#custom-notification {
+#custom-notification,
+#custom-screenrecording-indicator {
   background-color: @background;
-  padding: 3px 10px;
-  margin: 0 0 0 8px;
+  padding: 3px 8px;
+  margin: 0 0 0 6px;
   border-radius: 10px;
   transition: all .2s ease-in-out;
 }
 
 .modules-center {
-  padding: 3px 12px;
+  padding: 2px 4px;
   border-radius: 10px;
+  border: 1px solid alpha(@foreground, 0.22);
 }
 
 #custom-omarchy,
@@ -91,21 +94,19 @@ tooltip label {
   color: @foreground;
 }
 
-#pulseaudio {
-  padding: 3px 10px;
-}
-
 #network {
-  padding: 3px 10px;
+  padding: 3px 8px;
 }
 
 #tray {
-  margin-left: 8px;
-  padding: 3px 10px;
+  margin-left: 5px;
+  padding: 2px 8px;
 }
 
 #clock {
-  min-width: 210px;
+  min-width: 0;
+  padding: 3px 8px;
+  margin: 0 0 0 6px;
   letter-spacing: 0.2px;
 }
 
@@ -116,7 +117,7 @@ tooltip label {
   margin-left: 5px;
   margin-right: 0;
   font-size: 10px;
-  padding-bottom: 1px;
+  padding: 2px 6px;
 }
 
 #custom-screenrecording-indicator.active {

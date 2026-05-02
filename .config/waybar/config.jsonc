@@ -2,21 +2,21 @@
   "position": "top",
   "margin-top": 2,
   "margin-bottom": 0,
+  "margin-left": 10,
+  "margin-right": 10,
   "modules-left": [
-    "clock",
-    "custom/weather",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "group/tray-expander",
+    "custom/weather"
   ],
   "modules-center": [
-    "custom/omarchy",
+    "clock",
     "custom/screenrecording-indicator"
   ],
   "modules-right": [
-    "group/tray-expander",
     "bluetooth",
-    "cpu",
-    "pulseaudio",
     "network",
+    "cpu",
     "battery",
     "custom/notification"
   ],
@@ -103,22 +103,10 @@
     ]
   },
   "custom/expand-icon": {
-    "format": "",
+    "format": "",
     "tooltip": false
   },
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "on-click": "omarchy-launch-audio",
-    "on-click-right": "pamixer -t",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "headset": "",
-      "default": ["","",""]
-    }
-  },
+
   "network": {
     "format": "  {essid}",
     "format-ethernet": "󰈀  {ipaddr}",
@@ -129,6 +117,8 @@
   },
   "battery": {
     "format": "{icon}  {capacity}%",
+    "format-charging": "  {capacity}%",
+    "format-plugged": "  {capacity}%",
     "format-icons": {
       "default": ["󰁺","󰁻","󰁼","󰁽","󰁾","󰁿","󰂀","󰂁","󰂂","󰁹"]
     },
