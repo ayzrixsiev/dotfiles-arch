@@ -18,6 +18,7 @@
     "network",
     "cpu",
     "battery",
+    "custom/do",
     "custom/notification"
   ],
   "clock": {
@@ -55,6 +56,12 @@
     "interval": 5,
     "format": "  {usage}%",
     "on-click": "xdg-terminal-exec btop"
+  },
+  "custom/do": {
+    "format": "✓",
+    "tooltip": true,
+    "tooltip-format": "Tasks\n\nSuper + D",
+    "on-click": "~/.local/bin/do"
   },
   "custom/omarchy": {
     "format": "ARCH",
@@ -145,7 +152,7 @@
     "on-click": "swaync-client -t -sw"
   },
   "custom/screenrecording-indicator": {
-    "on-click": "omarchy-cmd-screenrecord",
+    "on-click": "omarchy-capture-screenrecording",
     "exec": "$OMARCHY_PATH/default/waybar/indicators/screen-recording.sh",
     "signal": 8,
     "return-type": "json"

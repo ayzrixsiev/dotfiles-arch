@@ -66,6 +66,7 @@ tooltip label {
 #pulseaudio,
 #network,
 #clock,
+#custom-do,
 #custom-notification,
 #custom-screenrecording-indicator {
   background-color: @background;
@@ -84,6 +85,7 @@ tooltip label {
 #custom-omarchy,
 #custom-weather,
 #clock,
+#custom-do,
 #custom-notification,
 #pulseaudio,
 #network,
@@ -122,6 +124,15 @@ tooltip label {
 
 #custom-screenrecording-indicator.active {
   color: @foreground;
+}
+
+#custom-do {
+  padding: 3px 9px;
+  opacity: 0.85;
+}
+
+#custom-do:hover {
+  opacity: 1;
 }
 
 #custom-voxtype {

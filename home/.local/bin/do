@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+# Do - toggle the task popup.
+#
+# The popup lives in one resident process. This script just pokes it over
+# D-Bus, which is why the toggle is instant; it starts the process on demand.
+#
+#   do              toggle the popup
+#   do show|hide    explicit
+#   do --daemon     start resident, stay hidden (used by Hyprland autostart)
+#   do --quit       stop the resident process
+
+set -uo pipefail
+
+APP_ID="org.omarchy.Do"
+OBJ_PATH="/org/omarchy/Do"
+DAEMON="${HOME}/.local/lib/do/do.py"
+
+action() {
+  gdbus call --session --dest "$APP_ID" --object-path "$OBJ_PATH" \
+    --method org.gtk.Actions.Activate "$1" "[]" "{}" >/dev/null 2>&1
+}
+
+start() {
+  [ -r "$DAEMON" ] || { echo "do: missing $DAEMON" >&2; exit 1; }
+  setsid -f python3 "$DAEMON" "$@" >/dev/null 2>&1
+}
+
+case "${1:-toggle}" in
+  toggle|--toggle|"")  action toggle || start ;;
+  show|--show)         action show   || start ;;
+  hide|--hide)         action hide   || true ;;
+  --daemon)            action hide   || start --daemon ;;
+  --quit)              action quit   || true ;;
+  -h|--help)
+    sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'
+    ;;
+  *)
+    echo "do: unknown argument '$1' (try: do --help)" >&2
+    exit 2
+    ;;
+esac
